@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kamba — Mockups UI</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --g1: #1B6B3A;
+  --g2: #4CAF50;
+  --g3: #8BC34A;
+  --amber: #F9A825;
+  --red: #E53935;
+  --dark: #0A0A0A;
+  --dark2: #141414;
+  --dark3: #1E1E1E;
+  --dark4: #282828;
+  --text: #F0EDE6;
+  --text2: rgba(240,237,230,0.55);
+  --text3: rgba(240,237,230,0.3);
+  --grad: linear-gradient(135deg, #1B6B3A, #4CAF50);
+  --grad2: linear-gradient(135deg, #4CAF50, #8BC34A);
+  --shadow: 0 24px 60px rgba(0,0,0,0.6);
+}
+
+body {
+  background: #080808;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  padding: 60px 40px;
+  min-height: 100vh;
+}
+
+/* PAGE HEADER */
+.page-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.page-header h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 56px;
+  font-weight: 800;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.page-header p {
+  color: var(--text2);
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* SECTION */
+.section {
+  margin-bottom: 100px;
+}
+.section-label {
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--g2);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--text);
+}
+
+/* PHONES GRID */
+.phones-row {
+  display: flex;
+  gap: 32px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* PHONE FRAME */
+.phone {
+  flex-shrink: 0;
+  width: 300px;
+}
+.phone-label {
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+.phone-frame {
+  width: 300px;
+  height: 620px;
+  background: var(--dark2);
+  border-radius: 44px;
+  border: 2px solid rgba(255,255,255,0.08);
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,0.05);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* STATUS BAR */
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text2);
+  flex-shrink: 0;
+}
+.status-icons { display: flex; gap: 6px; align-items: center; }
+.notch {
+  width: 100px;
+  height: 28px;
+  background: var(--dark2);
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid rgba(255,255,255,0.06);
+  border-top: none;
+  z-index: 10;
+}
+
+/* SCREEN CONTENT */
+.screen { flex: 1; overflow: hidden; position: relative; display: flex; flex-direction: column; }
+
+/* ── ONBOARDING ── */
+.onboard-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, #0D2818 0%, #0A0A0A 100%);
+}
+.onboard-pattern {
+  position: absolute; inset: 0; opacity: 0.06;
+  background-image: radial-gradient(circle at 2px 2px, #4CAF50 1px, transparent 0);
+  background-size: 24px 24px;
+}
+.onboard-content {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  height: 100%; padding: 32px 28px;
+  text-align: center;
+}
+.onboard-icon {
+  width: 96px; height: 96px;
+  background: rgba(76,175,80,0.12);
+  border: 2px solid rgba(76,175,80,0.3);
+  border-radius: 28px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 40px; margin-bottom: 28px;
+}
+.onboard-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px; font-weight: 800;
+  line-height: 1.2; margin-bottom: 12px;
+  color: var(--text);
+}
+.onboard-sub {
+  font-size: 14px; color: var(--text2);
+  line-height: 1.6; margin-bottom: 40px;
+}
+.dots { display: flex; gap: 8px; margin-bottom: 32px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.15); }
+.dot.active { width: 24px; border-radius: 4px; background: var(--g2); }
+.btn-main {
+  width: 100%;
+  padding: 16px;
+  background: var(--grad);
+  border-radius: 16px;
+  font-family: 'Syne', sans-serif;
+  font-size: 15px; font-weight: 700;
+  color: white; border: none; cursor: pointer;
+  letter-spacing: 0.3px;
+}
+.btn-ghost {
+  width: 100%;
+  padding: 14px;
+  background: transparent;
+  border-radius: 16px;
+  font-size: 14px; font-weight: 500;
+  color: var(--text2); border: none; cursor: pointer;
+  margin-top: 10px;
+}
+
+/* ── LOGIN ── */
+.login-content {
+  padding: 40px 24px 24px;
+  display: flex; flex-direction: column; height: 100%;
+}
+.login-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px; font-weight: 800;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+.login-sub { font-size: 13px; color: var(--text2); margin-bottom: 40px; }
+.login-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px; font-weight: 700;
+  margin-bottom: 6px;
+}
+.login-desc { font-size: 13px; color: var(--text2); margin-bottom: 28px; line-height: 1.5; }
+.input-wrap { position: relative; margin-bottom: 16px; }
+.input-flag {
+  position: absolute; left: 14px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+.input-field {
+  width: 100%;
+  background: var(--dark3);
+  border: 1.5px solid rgba(76,175,80,0.25);
+  border-radius: 14px;
+  padding: 15px 15px 15px 46px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px; letter-spacing: 2px;
+}
+.input-field::placeholder { color: var(--text3); letter-spacing: 0; }
+.input-hint { font-size: 11px; color: var(--text3); margin-top: 6px; padding-left: 4px; }
+.login-bottom { margin-top: auto; }
+.divider-text {
+  text-align: center; font-size: 12px;
+  color: var(--text3); margin: 16px 0;
+  position: relative;
+}
+.divider-text::before, .divider-text::after {
+  content: ''; position: absolute;
+  top: 50%; width: 35%; height: 1px;
+  background: rgba(255,255,255,0.08);
+}
+.divider-text::before { left: 0; }
+.divider-text::after { right: 0; }
+.taxista-badge {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--dark3);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px; padding: 14px;
+  font-size: 13px; color: var(--text2);
+}
+.taxista-badge-icon {
+  width: 32px; height: 32px;
+  background: rgba(76,175,80,0.1);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; flex-shrink: 0;
+}
+
+/* ── SMS CODE ── */
+.sms-content {
+  padding: 40px 24px 24px;
+  display: flex; flex-direction: column; height: 100%;
+}
+.back-btn {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 13px; color: var(--text2);
+  margin-bottom: 32px;
+}
+.sms-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px; font-weight: 800; margin-bottom: 8px;
+}
+.sms-desc { font-size: 13px; color: var(--text2); margin-bottom: 36px; line-height: 1.5; }
+.sms-desc span { color: var(--g2); }
+.code-boxes { display: flex; gap: 10px; margin-bottom: 8px; }
+.code-box {
+  flex: 1; height: 56px;
+  background: var(--dark3);
+  border: 2px solid rgba(76,175,80,0.3);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 22px; font-weight: 700;
+  color: var(--text);
+}
+.code-box.active { border-color: var(--g2); box-shadow: 0 0 0 3px rgba(76,175,80,0.15); }
+.code-box.empty { color: var(--text3); border-color: rgba(255,255,255,0.08); }
+.resend-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+.resend-text { font-size: 12px; color: var(--text3); }
+.resend-btn { font-size: 12px; color: var(--g2); font-weight: 600; }
+.timer-text { font-size: 12px; color: var(--amber); }
+
+/* ── MAP PASSENGER ── */
+.map-screen { position: relative; flex: 1; overflow: hidden; }
+.map-bg {
+  position: absolute; inset: 0;
+  background: #1a2a1a;
+}
+.map-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(76,175,80,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(76,175,80,0.06) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+.map-roads {
+  position: absolute; inset: 0;
+}
+.map-overlay-top {
+  position: absolute; top: 0; left: 0; right: 0;
+  padding: 12px 16px;
+  background: linear-gradient(180deg, rgba(10,10,10,0.95) 0%, transparent 100%);
+  display: flex; align-items: center; gap: 10px;
+}
+.search-bar {
+  flex: 1;
+  background: var(--dark3);
+  border: 1px solid rgba(76,175,80,0.2);
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--text2);
+}
+.avatar-mini {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--grad); display: flex;
+  align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700; font-size: 14px; flex-shrink: 0;
+}
+/* Taxi pins on map */
+.taxi-pin {
+  position: absolute;
+  display: flex; flex-direction: column; align-items: center;
+}
+.taxi-pin-bubble {
+  background: var(--dark2);
+  border: 2px solid var(--g2);
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 4px 16px rgba(76,175,80,0.3);
+}
+.taxi-pin-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--g2); margin-top: 2px; }
+.user-pin {
+  position: absolute;
+  bottom: 180px; left: 50%; transform: translateX(-50%);
+}
+.user-pin-outer {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(76,175,80,0.15);
+  border: 2px solid rgba(76,175,80,0.4);
+  display: flex; align-items: center; justify-content: center;
+  animation: pulse-pin 2s ease-in-out infinite;
+}
+@keyframes pulse-pin {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+.user-pin-inner {
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--g2);
+}
+.map-bottom-sheet {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: var(--dark2);
+  border-radius: 24px 24px 0 0;
+  padding: 16px 20px 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.sheet-handle { width: 40px; height: 4px; background: rgba(255,255,255,0.15); border-radius: 2px; margin: 0 auto 16px; }
+.nearby-title { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+.taxi-card-mini {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--dark3); border-radius: 12px;
+  padding: 10px 12px; margin-bottom: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.taxi-avatar {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--grad);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px;
+  flex-shrink: 0;
+}
+.taxi-info { flex: 1; }
+.taxi-name { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+.taxi-meta { font-size: 11px; color: var(--text2); }
+.taxi-time { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; color: var(--g2); }
+.map-cta {
+  width: 100%;
+  padding: 14px;
+  background: var(--grad);
+  border-radius: 14px;
+  font-family: 'Syne', sans-serif;
+  font-size: 15px; font-weight: 700;
+  color: white; border: none; text-align: center;
+  margin-top: 12px;
+}
+
+/* ── PEDIR BOLEIA ── */
+.pedido-content {
+  display: flex; flex-direction: column; height: 100%;
+  background: var(--dark2);
+}
+.pedido-map-mini {
+  height: 200px; position: relative; overflow: hidden;
+  background: #1a2a1a;
+  flex-shrink: 0;
+}
+.pedido-map-mini .map-grid { background-size: 20px 20px; }
+.route-line {
+  position: absolute;
+  top: 50%; left: 20%; width: 60%; height: 3px;
+  background: var(--grad2);
+  border-radius: 2px;
+  transform: translateY(-50%);
+}
+.route-dot-a {
+  position: absolute; top: 50%; left: 20%;
+  transform: translate(-50%, -50%);
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--g2); border: 2px solid white;
+}
+.route-dot-b {
+  position: absolute; top: 50%; left: 80%;
+  transform: translate(-50%, -50%);
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--amber); border: 2px solid white;
+}
+.pedido-body { flex: 1; padding: 20px; overflow-y: auto; }
+.dest-row {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--dark3); border-radius: 12px;
+  padding: 12px; margin-bottom: 8px;
+}
+.dest-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.dest-text { font-size: 13px; flex: 1; }
+.dest-change { font-size: 12px; color: var(--g2); font-weight: 600; }
+.section-mini-title { font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: 2px; margin: 16px 0 10px; }
+.driver-option {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--dark3); border-radius: 12px;
+  padding: 12px; margin-bottom: 8px;
+  border: 1.5px solid transparent;
+}
+.driver-option.selected { border-color: var(--g2); background: rgba(76,175,80,0.08); }
+.driver-option .taxi-avatar { width: 42px; height: 42px; font-size: 16px; }
+.driver-option-info { flex: 1; }
+.driver-name { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+.driver-meta { font-size: 11px; color: var(--text2); }
+.driver-right { text-align: right; }
+.driver-eta { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--g2); }
+.driver-seats { font-size: 11px; color: var(--text2); }
+.stars { color: var(--amber); font-size: 11px; }
+.pedido-footer { padding: 16px 20px 24px; background: var(--dark2); border-top: 1px solid rgba(255,255,255,0.06); }
+.price-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.price-label { font-size: 13px; color: var(--text2); }
+.price-val { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; color: var(--text); }
+
+/* ── VIAGEM EM CURSO ── */
+.viagem-screen { position: relative; flex: 1; overflow: hidden; }
+.viagem-map {
+  position: absolute; inset: 0;
+  background: #1a2a1a;
+}
+.viagem-route {
+  position: absolute;
+  top: 30%; left: 15%; width: 70%; height: 5px;
+  background: linear-gradient(90deg, var(--g1), var(--g2));
+  border-radius: 3px;
+  transform: rotate(-5deg);
+}
+.car-icon {
+  position: absolute;
+  top: calc(30% - 16px);
+  left: 40%;
+  font-size: 28px;
+  filter: drop-shadow(0 4px 12px rgba(76,175,80,0.6));
+  animation: car-move 3s ease-in-out infinite;
+}
+@keyframes car-move {
+  0%, 100% { left: 38%; }
+  50% { left: 44%; }
+}
+.viagem-top {
+  position: absolute; top: 0; left: 0; right: 0;
+  padding: 12px 16px;
+  background: linear-gradient(180deg, rgba(10,10,10,0.98) 0%, transparent 100%);
+}
+.viagem-status {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(76,175,80,0.15);
+  border: 1px solid rgba(76,175,80,0.3);
+  border-radius: 100px;
+  padding: 8px 14px;
+  width: fit-content;
+}
+.pulse-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--g2);
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+.viagem-status-text { font-size: 13px; font-weight: 600; color: var(--g2); }
+.emergency-btn {
+  position: absolute; top: 12px; right: 16px;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(229,57,53,0.2);
+  border: 2px solid rgba(229,57,53,0.4);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+}
+.viagem-bottom {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: var(--dark2);
+  border-radius: 24px 24px 0 0;
+  padding: 16px 20px 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.eta-row {
+  display: flex; justify-content: space-between;
+  align-items: center; margin-bottom: 16px;
+}
+.eta-main { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; color: var(--g2); }
+.eta-label { font-size: 12px; color: var(--text2); margin-top: 2px; }
+.eta-dist { text-align: right; }
+.eta-dist-val { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; }
+.eta-dist-label { font-size: 12px; color: var(--text2); }
+.progress-track { height: 4px; background: var(--dark4); border-radius: 2px; margin-bottom: 16px; }
+.progress-fill { height: 100%; width: 60%; background: var(--grad); border-radius: 2px; }
+.passenger-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.p-chip {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--dark3); border-radius: 100px;
+  padding: 6px 10px;
+  font-size: 12px; color: var(--text2);
+}
+.p-chip-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--g2); }
+
+/* ── AVALIAÇÃO ── */
+.aval-content {
+  padding: 32px 24px;
+  display: flex; flex-direction: column; height: 100%;
+  align-items: center;
+}
+.aval-icon { font-size: 56px; margin-bottom: 16px; }
+.aval-title { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 6px; text-align: center; }
+.aval-sub { font-size: 13px; color: var(--text2); margin-bottom: 28px; text-align: center; }
+.aval-driver-card {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--dark3); border-radius: 16px;
+  padding: 14px; width: 100%; margin-bottom: 28px;
+}
+.aval-driver-info h4 { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+.aval-driver-info p { font-size: 12px; color: var(--text2); }
+.stars-big { display: flex; gap: 8px; margin-bottom: 24px; }
+.star-btn { font-size: 36px; cursor: pointer; }
+.star-btn.lit { filter: drop-shadow(0 0 8px rgba(249,168,37,0.6)); }
+.aval-textarea {
+  width: 100%;
+  background: var(--dark3);
+  border: 1.5px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 14px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  resize: none; height: 80px;
+  margin-bottom: auto;
+}
+.aval-textarea::placeholder { color: var(--text3); }
+.aval-footer { width: 100%; margin-top: 20px; }
+
+/* ── TAXISTA MAP ── */
+.taxista-map-screen { position: relative; flex: 1; overflow: hidden; }
+.request-notification {
+  position: absolute; bottom: 160px; left: 12px; right: 12px;
+  background: var(--dark2);
+  border: 1.5px solid var(--g2);
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 8px 32px rgba(76,175,80,0.25);
+  z-index: 10;
+  animation: slide-up 0.3s ease;
+}
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.req-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.req-badge { background: rgba(76,175,80,0.15); color: var(--g2); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 100px; letter-spacing: 1px; }
+.req-timer { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800; color: var(--amber); }
+.req-person { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.req-person-name { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; }
+.req-person-dest { font-size: 12px; color: var(--text2); }
+.req-dist { font-size: 12px; color: var(--g2); font-weight: 600; }
+.req-timer-bar { height: 3px; background: var(--dark4); border-radius: 2px; margin-bottom: 14px; }
+.req-timer-fill { height: 100%; width: 70%; background: var(--amber); border-radius: 2px; }
+.req-btns { display: flex; gap: 8px; }
+.req-btn-recusa { flex: 1; padding: 12px; background: rgba(229,57,53,0.1); border: 1.5px solid rgba(229,57,53,0.3); border-radius: 12px; font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--red); text-align: center; }
+.req-btn-aceita { flex: 2; padding: 12px; background: var(--grad); border-radius: 12px; font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: white; text-align: center; }
+.taxista-bottom-bar {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: var(--dark2);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 16px 20px 24px;
+  display: flex; align-items: center; gap: 12px;
+  border-radius: 24px 24px 0 0;
+}
+.turno-info { flex: 1; }
+.turno-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
+.turno-val { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; }
+.turno-badge { display: flex; align-items: center; gap: 6px; background: rgba(76,175,80,0.1); border: 1px solid rgba(76,175,80,0.25); border-radius: 100px; padding: 6px 12px; }
+.turno-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--g2); animation: pulse-dot 1.5s infinite; }
+.turno-badge-text { font-size: 12px; font-weight: 600; color: var(--g2); }
+
+/* ── CONFIRMAÇÃO ── */
+.confirm-content {
+  display: flex; flex-direction: column; height: 100%;
+  padding: 32px 24px; align-items: center; justify-content: center;
+}
+.confirm-circle {
+  width: 100px; height: 100px; border-radius: 50%;
+  background: rgba(76,175,80,0.12);
+  border: 3px solid rgba(76,175,80,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 44px; margin-bottom: 24px;
+  animation: confirm-pop 0.5s ease;
+}
+@keyframes confirm-pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+.confirm-title { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 8px; text-align: center; }
+.confirm-sub { font-size: 14px; color: var(--text2); text-align: center; margin-bottom: 32px; line-height: 1.5; }
+.confirm-card {
+  width: 100%; background: var(--dark3);
+  border-radius: 16px; padding: 16px; margin-bottom: 24px;
+}
+.confirm-row {
+  display: flex; justify-content: space-between;
+  align-items: center; padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.confirm-row:last-child { border-bottom: none; }
+.confirm-key { font-size: 13px; color: var(--text2); }
+.confirm-val { font-size: 13px; font-weight: 600; }
+.confirm-val.green { color: var(--g2); }
+
+/* DIVIDER */
+hr.div { border: none; border-top: 1px solid rgba(255,255,255,0.04); margin: 60px 0; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>KAMBA</h1>
+  <p>Mockups UI — Prioridade 1 — 2026</p>
+</div>
+
+<!-- ════════════════════════════ PASSAGEIRO ════════════════════════════ -->
+<div class="section">
+  <p class="section-label">01 — Passageiro</p>
+  <h2 class="section-title">Fluxo do Passageiro</h2>
+
+  <div class="phones-row">
+
+    <!-- ONBOARDING -->
+    <div class="phone">
+      <p class="phone-label">Onboarding</p>
+      <div class="phone-frame">
+        <div class="notch"></div>
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons">
+            <span>●●●</span><span>WiFi</span><span>🔋</span>
+          </div>
+        </div>
+        <div class="screen">
+          <div class="onboard-bg"></div>
+          <div class="onboard-pattern"></div>
+          <div class="onboard-content">
+            <div class="onboard-icon">🚐</div>
+            <h2 class="onboard-title">Chega sem esperar táxi vazio</h2>
+            <p class="onboard-sub">Kamba junta passageiros do mesmo bairro no mesmo táxi. Mais rápido, mais barato.</p>
+            <div class="dots">
+              <div class="dot active"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <button class="btn-main">Próximo →</button>
+            <button class="btn-ghost">Saltar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOGIN -->
+    <div class="phone">
+      <p class="phone-label">Login SMS</p>
+      <div class="phone-frame">
+        <div class="notch"></div>
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons"><span>●●●</span><span>🔋</span></div>
+        </div>
+        <div class="screen">
+          <div class="login-content">
+            <div class="login-logo">Kamba</div>
+            <p class="login-sub">by Kandonga</p>
+            <h2 class="login-title">Entra na tua conta</h2>
+            <p class="login-desc">Introduz o teu número de telefone angolano para receber o código.</p>
+            <div class="input-wrap">
+              <span class="input-flag">🇦🇴</span>
+              <input class="input-field" placeholder="9XX XXX XXX" value="923 456 789">
+            </div>
+            <p class="input-hint">Vais receber um SMS com 6 dígitos</p>
+            <div class="login-bottom">
+              <button class="btn-main">Receber código SMS</button>
+              <div class="divider-text">és taxista?</div>
+              <div class="taxista-badge">
+                <div class="taxista-badge-icon">🚗</div>
+                <span>Entrar como taxista</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SMS CODE -->
+    <div class="phone">
+      <p class="phone-label">Código SMS</p>
+      <div class="phone-frame">
+        <div class="notch"></div>
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons"><span>●●●</span><span>🔋</span></div>
+        </div>
+        <div class="screen">
+          <div class="sms-content">
+            <div class="back-btn">← Voltar</div>
+            <h2 class="sms-title">Verifica o teu número</h2>
+            <p class="sms-desc">Enviámos um código para <span>+244 923 456 789</span>. Introduz os 6 dígitos abaixo.</p>
+            <div class="code-boxes">
+              <div class="code-box">4</div>
+              <div class="code-box">7</div>
+              <div class="code-box active">2</div>
+              <div class="code-box empty">_</div>
+              <div class="code-box empty">_</div>
+              <div class="code-box empty">_</div>
+            </div>
+            <div class="resend-row">
+              <span class="resend-text">Não recebeste?</span>
+              <span class="timer-text">Reenviar em 3:42</span>
+            </div>
+            <button class="btn-main" style="opacity:0.4;">Confirmar</button>
+            <p style="font-size:12px; color:var(--text3); text-align:center; margin-top:16px; line-height:1.5;">O código expira em 5 minutos. Máximo 3 tentativas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAPA PASSAGEIRO -->
+    <div class="phone">
+      <p class="phone-label">Mapa Principal</p>
+      <div class="phone-frame">
+        <div class="notch"></div>
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons"><span>●●●</span><span>🔋</span></div>
+        </div>
+        <div class="screen">
+          <div class="map-screen">
+            <div class="map-bg"></div>
+            <div class="map-grid"></div>
+            <!-- SVG roads -->
+            <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.15" viewBox="0 0 300 500">
+              <path d="M0 250 Q150 200 300 250" stroke="#4CAF50" stroke-width="8" fill="none"/>
+              <path d="M150 0 Q180 250 150 500" stroke="#4CAF50" stroke-width="8" fill="none"/>
+              <path d="M0 150 Q100 130 200 200" stroke="#4CAF50" stroke-width="4" fill="none"/>
+              <path d="M100 350 Q200 300 300 380" stroke="#4CAF50" stroke-width="4" fill="none"/>
+            </svg>
+            <!-- Taxi pins -->
+            <div class="taxi-pin" style="top:28%;left:22%">
+              <div class="taxi-pin-bubble">🚐</div>
+              <div class="taxi-pin-dot"></div>
+            </div>
+            <div class="taxi-pin" style="top:35%;left:65%">
+              <div class="taxi-pin-bubble">🚐</div>
+              <div class="taxi-pin-dot"></div>
+            </div>
+            <div class="taxi-pin" style="top:20%;left:50%">
+              <div class="taxi-pin-bubble">🚐</div>
+              <div class="taxi-pin-dot"></div>
+            </div>
+            <!-- User pin -->
+            <div class="user-pin">
+              <div class="user-pin-outer">
+                <div class="user-pin-inner"></div>
+              </div>
+            </div>
+            <!-- Top bar -->
+            <div class="map-overlay-top">
+              <div class="search-bar">🔍 &nbsp;Para onde vais?</div>
+              <div class="avatar-mini">J</div>
+            </div>
+            <!-- Bottom sheet -->
+            <div class="map-bottom-sheet">
+              <div class="sheet-handle"></div>
+              <p class="nearby-title">3 táxis próximos</p>
+              <div class="taxi-card-mini">
+                <div class="taxi-avatar">M</div>
+                <div class="taxi-info">
+                  <p class="taxi-name">Manuel K.</p>
+                  <p class="taxi-meta">⭐ 4.8 · 2 lugares</p>
+                </div>
+                <span class="taxi-time">3 min</span>
+              </div>
+              <div class="taxi-card-mini">
+                <div class="taxi-avatar" style="background:linear-gradient(135deg,#2196F3,#1565C0)">A</div>
+                <div class="taxi-info">
+                  <p class="taxi-name">António L.</p>
+                  <p class="taxi-meta">⭐ 4.6 · 3 lugares</p>
+                </div>
+                <span class="taxi-time">6 min</span>
+              </div>
+              <button class="map-cta">Quero uma boleia</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PEDIR BOLEIA -->
+    <div class="phone">
+      <p class="phone-label">Pedir Boleia</p>
+      <div class="phone-frame">
+        <div class="notch"></div>
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons"><span>●●●</span><span>🔋</span></div>
+        </div>
+        <div class="screen">
+          <div class="pedido-content">
+            <div class="pedido-map-mini">
+              <div class="map-grid"></div>
+              <div class="route-line"></div>
+              <div class="route-dot-a"></div>
+              <div class="route-dot-b"></div>
+            </div>
+            <div class="pedido-body">
+              <div class="dest-row">
+                <div class="dest-dot" style="background:var(--g2)"></div>
+                <span class="dest-text">A tua localização actual</span>
+              </div>
+              <div class="dest-row">
+                <div class="dest-dot" style="background:var(--amber)"></div>
+                <span class="dest-text">Mercado do Rocha Pinto</span>
+                <span class="dest-change">Mudar</span>
+              </div>
+              <p class="section-mini-title">Escolhe o taxista</p>
+              <div class="driver-option selected">
+                <div class="taxi-avatar">M</div>
+                <div class="driver-option-info">
+                  <p class="driver-name">Manuel Kiala</p>
+                  <p class="driver-meta"><span class="stars">⭐⭐⭐⭐⭐</span> 4.8 · 2 lugares livres</p>
+                </div>
+                <div class="driver-right">
+                  <p class="driver-eta">3 min</p>
+                  <p class="driver-seats">1.2 km</p>
+                </div>
+              </div>
+              <div class="driver-option">
+                <div class="taxi-avatar" style="background:linear-gradient(135deg,#2196F3,#1565C0)">A</div>
+                <div class="driver-option-info">
+                  <p class="driver-name">António Luvualo</p>
+                  <p class="driver-meta"><span class="stars">⭐⭐⭐⭐</span> 4.6 · 3 lugares livres</p>
+                </div>
+                <div class="driver-right">
+                  <p class="driver-eta">6 min</p>
+                  <p class="driver-seats">2.1 km</p>
+                </div>
+              </div>
+            </div>
+            <div class="pedido-footer">
+              <div class="price-row">
+                <span class="price-label">Valor estimado</span>
+                <span class="price-val">300 Kz</span>
+              </div>
+              <button class="btn-main">Confirmar pedido</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIAGEM EM CURSO -->
+    <div class="phone">
+      <p class="phone-label">Viagem em Curso</p>
+      <div class="phone-frame">
+        <div class="notch"></div>
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons"><span>●●●</span><span>🔋</span></div>
+        </div>
+        <div class="screen">
+          <div class="viagem-screen">
+            <div class="viagem-map"></div>
+            <div class="map-grid" style="position:absolute;inset:0;background-size:20px 20px;opacity:0.08"></div>
+            <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.15" viewBox="0 0 300 500">
+              <path d="M0 280 Q150 220 300 260" stroke="#4CAF50" stroke-width="8" fill="none"/>
+              <path d="M120 0 Q160 250 140 500" stroke="#4CAF50" stroke-width="5" fill="none"/>
+            </svg>
+            <div class="viagem-route"></div>
+            <div class="car-icon">🚐</div>
+            <div class="viagem-top">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div class="viagem-status">
+                  <div class="pulse-dot"></div>
+                  <span class="viagem-status-text">Em viagem</span>
+                </div>
+                <div class="emergency-btn">🆘</div>
+              </div>
+            </div>
+            <div class="viagem-bottom">
+              <div class="sheet-handle"></div>
+              <div class="eta-row">
+                <div>
+                  <div class="eta-main">8 min</div>
+                  <div class="eta-label">Tempo de chegada</div>
+                </div>
+                <div class="eta-dist">
+                  <div class="eta-dist-val">3.2 km</div>
+                  <div class="eta-dist-label">Restam</div>
+                </div>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill"></div>
+              </div>
+              <p style="font-size:11px;color:var(--text3);margin-bottom:10px;text-transform:uppercase;letter-spacing:2px">No táxi</p>
+              <div class="passenger-chips">
+                <div class="p-chip"><div class="p-chip-dot"></div> Tu</div>
+                <div class="p-chip"><div class="p-chip-dot" style="background:var(--amber)"></div> Rosa M.</div>
+                <div class="p-chip"><div class="p-chip-dot" style="background:#2196F3"></div> Carlos F.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AVALIAÇÃO -->
+    <div class="phone">
+      <p class="phone-label">Avaliação</p>
+      <div class="phone-frame">
+        <div class="notch"></div>
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons"><span>●●●</span><span>🔋</span></div>
+        </div>
+        <div class="screen">
+          <div class="aval-content">
+            <div class="aval-icon">🎉</div>
+            <h2 class="aval-title">Chegaste!</h2>
+            <p class="aval-sub">Como foi a viagem com o Manuel?</p>
+            <div class="aval-driver-card">
+              <div class="taxi-avatar" style="width:48px;height:48px;font-size:18px">M</div>
+              <div class="aval-driver-info">
+                <h4>Manuel Kiala</h4>
+                <p>Toyota Hiace · LD-45-23-AB</p>
+              </div>
+            </div>
+            <div class="stars-big">
+              <span class="star-btn lit">⭐</span>
+              <span class="star-btn lit">⭐</span>
+              <span class="star-btn lit">⭐</span>
+              <span class="star-btn lit">⭐</span>
+              <span class="star-btn">☆</span>
+            </div>
+            <textarea class="aval-textarea" placeholder="Comentário opcional..."></textarea>
+            <div class="aval-footer">
+              <button class="btn-main">Enviar avaliação</button>
+              <button class="btn-ghost">Saltar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- ════════════════════════════ TAXISTA ════════════════════════════ -->
+<div class="section">
+  <p class="section-label">02 — Taxista</p>
+  <h2 class="section-title">Fluxo do Taxista</h2>
+
+  <div class="phones-row">
+
+    <!-- TAXISTA MAPA + PEDIDO -->
+    <div class="phone">
+      <p class="phone-label">Pedido Recebido</p>
+      <div class="phone-frame">
+        <div class="notch"></div>
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons"><span>●●●</span><span>🔋</span></div>
+        </div>
+        <div class="screen">
+          <div class="taxista-map-screen">
+            <div class="map-bg" style="position:absolute;inset:0;background:#1a2a1a"></div>
+            <div class="map-grid" style="position:absolute;inset:0;background-size:24px 24px"></div>
+            <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.12" viewBox="0 0 300 500">
+              <path d="M0 220 Q150 180 300 230" stroke="#4CAF50" stroke-width="10" fill="none"/>
+              <path d="M160 0 Q180 250 160 500" stroke="#4CAF50" stroke-width="6" fill="none"/>
+            </svg>
+            <!-- Passageiro pin -->
+            <div style="position:absolute;top:30%;left:40%;display:flex;flex-direction:column;align-items:center">
+              <div style="background:var(--amber);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 4px 16px rgba(249,168,37,0.4)">👤</div>
+              <div style="width:6px;height:6px;border-radius:50%;background:var(--amber);margin-top:2px"></div>
+            </div>
+            <!-- Car icon -->
+            <div style="position:absolute;top:55%;left:55%;font-size:32px;filter:drop-shadow(0 4px 12px rgba(76,175,80,0.5))">🚐</div>
+            <!-- Top bar -->
+            <div style="position:absolute;top:0;left:0;right:0;padding:12px 16px;background:linear-gradient(180deg,rgba(10,10,10,0.95) 0%,transparent 100%)">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div>
+                  <p style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:2px">Turno activo</p>
+                  <p style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700">Bairro Rocha → Centro</p>
+                </div>
+                <div class="turno-badge">
+                  <div class="turno-badge-dot"></div>
+                  <span class="turno-badge-text">Online</span>
+                </div>
+              </div>
+            </div>
+            <!-- Request notification -->
+            <div class="request-notification">
+              <div class="req-header">
+                <span class="req-badge">NOVO PEDIDO</span>
+                <span class="req-timer">0:42</span>
+              </div>
+              <div class="req-person">
+                <div class="taxi-avatar" style="background:linear-gradient(135deg,#E91E63,#9C27B0);width:40px;height:40px;font-size:16px">R</div>
+                <div>
+                  <p class="req-person-name">Rosa Muteka</p>
+                  <p class="req-person-dest">📍 Mercado do Rocha Pinto</p>
+                  <p class="req-dist">500m de ti · compatível com rota</p>
+                </div>
+              </div>
+              <div class="req-timer-bar"><div class="req-timer-fill"></div></div>
+              <div class="req-btns">
+                <div class="req-btn-recusa">Recusar</div>
+                <div class="req-btn-aceita">✓ Aceitar</div>
+              </div>
+            </div>
+            <!-- Bottom bar -->
+            <div class="taxista-bottom-bar">
+              <div class="turno-info">
+                <p class="turno-label">Hoje</p>
+                <p class="turno-val">3 viagens · 900 Kz</p>
+              </div>
+              <div style="text-align:right">
+                <p style="font-size:11px;color:var(--text3)">Lotação</p>
+                <p style="font-family:'Syne',sans-serif;font-weight:700">2 / 4</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAXISTA CONFIRMAÇÃO CHEGADA -->
+    <div class="phone">
+      <p class="phone-label">Confirmação de Chegada</p>
+      <div class="phone-frame">
+        <div class="notch"></div>
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons"><span>●●●</span><span>🔋</span></div>
+        </div>
+        <div class="screen">
+          <div class="confirm-content" style="background:var(--dark2)">
+            <div class="confirm-circle">✅</div>
+            <h2 class="confirm-title">Viagem concluída!</h2>
+            <p class="confirm-sub">3 passageiros chegaram ao destino. O sistema registou a viagem automaticamente.</p>
+            <div class="confirm-card">
+              <div class="confirm-row">
+                <span class="confirm-key">Passageiros</span>
+                <span class="confirm-val">3</span>
+              </div>
+              <div class="confirm-row">
+                <span class="confirm-key">Valor total</span>
+                <span class="confirm-val">900 Kz</span>
+              </div>
+              <div class="confirm-row">
+                <span class="confirm-key">Comissão Kamba (10%)</span>
+                <span class="confirm-val" style="color:var(--red)">- 90 Kz</span>
+              </div>
+              <div class="confirm-row">
+                <span class="confirm-key">O teu ganho</span>
+                <span class="confirm-val green">810 Kz</span>
+              </div>
+              <div class="confirm-row">
+                <span class="confirm-key">Dívida acumulada</span>
+                <span class="confirm-val" style="color:var(--amber)">270 Kz</span>
+              </div>
+            </div>
+            <button class="btn-main">Continuar turno</button>
+            <button class="btn-ghost">Terminar turno</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- FOOTER -->
+<div style="text-align:center;padding:40px 0 60px">
+  <p style="font-family:'Syne',sans-serif;font-size:32px;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px">KAMBA</p>
+  <p style="font-size:13px;color:var(--text3);letter-spacing:2px">Mockups UI v1.0 · Prioridade 1 · 2026</p>
+</div>
+
+</body>
+</html>
